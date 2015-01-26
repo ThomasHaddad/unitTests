@@ -1,7 +1,5 @@
 <?php
 
-namespace tests;
-
 use Calculator\CalculatorStart;
 
 class CalculatorStartTest extends \PHPUNIT_Framework_TestCase{
