@@ -5,33 +5,43 @@ namespace Calculator;
 class CalculatorStart{
     private $total;
 
-    public function add($arrayVal){
+    public function add(){
         $arrayVal=func_get_args();
-        foreach($arrayVal as $val){
-            if(!is_int($val)){
-                throw new \InvalidArgumentException('NaN');
-            }
-            $this->total+=$val;
+        $this->calculate($arrayVal,"+");
+    }
+    public function substract(){
+        $arrayVal=func_get_args();
+        $this->calculate($arrayVal,"-");
+    }
+    public function multiply(){
+        $arrayVal=func_get_args();
+        $this->calculate($arrayVal,"*");
+    }
+
+    public function calculate($numbers,$symbol){
+        var_dump($numbers);
+        foreach($numbers as $val){
+            $this->calcul($val,$symbol);
         }
     }
-    public function substract($arrayVal){
-        $arrayVal=func_get_args();
-        foreach($arrayVal as $val){
-            if(!is_int($val)){
-                throw new \InvalidArgumentException('NaN');
-            }
-            $this->total-=$val;
+
+    public function calcul($number,$symbol){
+        if(!is_numeric($number)){
+            throw new \InvalidArgumentException(sprintf('(%s) NaN',$number));
+        }
+        switch($symbol){
+            case "+":
+                $this->total+=$number;
+                break;
+            case "-":
+                ($this->total==0) ? $this->total=$number : $this->total-=$number;
+                break;
+            case "*":
+                ($this->total==0) ? $this->total=$number : $this->total*=$number;
+                break;
         }
     }
-    public function multiply($arrayVal){
-        $arrayVal=func_get_args();
-        foreach($arrayVal as $val){
-            if(!is_int($val)){
-                throw new \InvalidArgumentException('NaN');
-            }
-            $this->total*=$val;
-        }
-    }
+
     public function getResult(){
         return $this->total;
     }

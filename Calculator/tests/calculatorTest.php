@@ -39,7 +39,7 @@ class CalculatorStartTest extends \PHPUNIT_Framework_TestCase{
      * */
     public function testSubstract(){
         $this->calculator->substract(1,2,3,4,5);
-        $this->assertEquals(-15,$this->calculator->getResult());
+        $this->assertEquals(-13,$this->calculator->getResult());
     }
     /*
      * @testAllOperationsAtOnce
