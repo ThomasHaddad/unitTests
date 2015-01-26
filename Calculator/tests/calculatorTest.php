@@ -10,14 +10,14 @@ class CalculatorStartTest extends \PHPUNIT_Framework_TestCase{
         $this->calculator=new CalculatorStart;
     }
 
-    /*
+    /**
      * @test
      * */
     public function testCalculator(){
         $this->assertEquals(0,$this->calculator->getResult());
     }
 
-    /*
+    /**
      * @test
      * @dataProvider listValue
      * */
@@ -26,7 +26,7 @@ class CalculatorStartTest extends \PHPUNIT_Framework_TestCase{
         $this->assertEquals(28,$this->calculator->getResult());
     }
 
-    /*
+    /**
      * @testAdd
      * */
     public function testAdd(){
@@ -34,14 +34,14 @@ class CalculatorStartTest extends \PHPUNIT_Framework_TestCase{
         $this->assertEquals(10,$this->calculator->getResult());
     }
 
-    /*
+    /**
      * @testSubstract
      * */
     public function testSubstract(){
         $this->calculator->substract(1,2,3,4,5);
         $this->assertEquals(-13,$this->calculator->getResult());
     }
-    /*
+    /**
      * @testAllOperationsAtOnce
      * */
     public function testAllOperationsAtOnce(){
@@ -53,7 +53,7 @@ class CalculatorStartTest extends \PHPUNIT_Framework_TestCase{
         $this->assertEquals(0,$this->calculator->getResult());
 
     }
-    /*
+    /**
      * @testMultiply
      * */
     public function testMultiply(){
