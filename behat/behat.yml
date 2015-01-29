@@ -1,0 +1,13 @@
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://google.fr/
+      goutte: ~
+      selenium2:
+        wd_host: http://192.168.1.11:4444/wd/hub/
+
+
+  suites:
+    core:
+      contexts: [FeatureContext, CardContext]
+      filters: { tags: '@core' }

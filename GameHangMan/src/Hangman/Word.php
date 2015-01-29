@@ -19,6 +19,7 @@ class Word {
     }
 
     public function tryLetter($letter){
+        $letter = strtolower($letter);
         if(!is_string($letter)){
             throw new \InvalidArgumentException('not a valid string');
         }

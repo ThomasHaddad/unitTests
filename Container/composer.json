@@ -1,22 +1,22 @@
 {
-    "name": "container/container",
+    "name": "thomashaddad/thomashaddad",
     "license": "MIT",
     "authors": [
         {
-            "name": "Antoine Lucsko",
-            "email": "antoine.lucsko@wanadoo.fr"
+            "name": "thomas haddad",
+            "email": "thomas.af.haddad@gmail.com"
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.4.0",
-        "symfony/yaml": "~3.0@dev"
-    },
-    "require-dev": {
-    },
+
     "autoload": {
         "psr-4": {
-            "": ["ContainerService/", "tests/"]
+            "" : ["src/","tests/"]
         }
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "4.4.*"
     }
+
 }

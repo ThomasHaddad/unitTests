@@ -17,12 +17,15 @@ class GameExceptionTest extends \PHPUnit_Framework_TestCase{
     }
 
     /**
-     * @expectedException
+     * @expectedException InvalidArgumentException
      */
     public function testInvalidArgumentException(){
         $this->setExpectedException('InvalidArgumentException', 'not a valid string');
         $this->game->tryLetter(12);
     }
+    /**
+     * @expectedException InvalidArgumentException
+     */
     public function testInvalidWordSetUp(){
         $this->setExpectedException('InvalidArgumentException', 'not a valid string');
         new Word("abc12");
